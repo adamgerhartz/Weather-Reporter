@@ -29,6 +29,7 @@ export default class WeatherController {
       try {
         // try to get the position using getLocation()
         const location = getLocation()
+        console.log(`POSITION: ${location}`);
         
         // if we get the location back then set the latitude and longitude into this.position
         this.position.lat = location.latitude;
