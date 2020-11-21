@@ -1,0 +1,22 @@
+{
+  "name": "weather-reporter",
+  "version": "1.0.0",
+  "description": "This is an application that displays weather data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamgerhartz/Weather-Reporter.git"
+  },
+  "author": "Adam Gerhartz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamgerhartz/Weather-Reporter/issues"
+  },
+  "homepage": "https://github.com/adamgerhartz/Weather-Reporter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
