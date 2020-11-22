@@ -30,12 +30,12 @@ module.exports = class WeatherController {
       try {
         // try to get the position using getLocation()
         const location = util.getLocation()
-        console.log(`POSITION: ${location}`);
         
         // if we get the location back then set the latitude and longitude into this.position
         this.position.lat = location.latitude;
         this.position.lon = location.longitude;
-        
+        console.log(`Lat: ${this.position.lat}`);  
+        console.log(`Lon: ${this.position.lon}`);      
       } catch (error) {
         console.log(error);
       }
@@ -45,7 +45,7 @@ module.exports = class WeatherController {
   async getWeatherByLocation() {
     // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
     //set loading message
-    this.parentElement.innerHTML = 'Loading...';
+    //this.parentElement.innerHTML = 'Loading...';
     // get the list of quakes in the specified radius of the location
     const weather = await this.weather.getWeatherByLocation(this.position);
     // render the list to html
