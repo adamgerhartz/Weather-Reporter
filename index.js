@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
+require('dotenv').config();
 const WeatherController = require('./weather-main/WeatherController');
 const PORT = process.env.PORT || 5000;
 

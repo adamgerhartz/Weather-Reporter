@@ -1,6 +1,5 @@
 const getLocation = function(options) {
     const unirest = require("unirest");
-    require('dotenv').config()
     return new Promise(function(resolve, reject) {
         // return geolocation
         var req = unirest("GET", "https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/");
