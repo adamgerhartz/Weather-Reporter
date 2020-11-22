@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
-const weatherController = require('./weather-main/WeatherController');
+const WeatherController = require('./weather-main/WeatherController');
 const PORT = process.env.PORT || 5000;
 
 express()
@@ -12,7 +12,7 @@ express()
 	.set('view engine', 'ejs')
 	.get('/', (req, res) => {
 		console.log('Received a request for the root directory')
-		const weatherController = new WeatherController('#weather');
+		const weatherController = new weatherController('#weather');
 		console.log("Did we make it?");
 		weatherController.init();
 		res.render('pages/index')
