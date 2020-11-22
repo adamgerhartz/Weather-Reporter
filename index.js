@@ -16,9 +16,9 @@ express()
 		const data = weather.getWeatherByCity(defaultCity)
 			.then(data => {
 				console.log(data);
-			});
-		// res.render('pages/index', {
-		// 	temp: data.main.temp
-		// })			
+				res.render('pages/index', {
+					temp: data.main.temp
+				})
+			});		
 	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));
