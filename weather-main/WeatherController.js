@@ -11,16 +11,14 @@ module.exports = class WeatherController {
   }
 
   async init() {
-    const temperature = this.getWeatherByCity(this.city);
-    let result = await temperature;
-    return result;
+    this.getWeatherByCity(this.city);
   }
 
   async getWeatherByCity() {
-    return new Promise((resolve, reject) => {
-      const weather = this.weather.getWeatherByCity(this.city);
-      resolve(weather.main.temp);
-    });
+
+
+    const weather = this.weather.getWeatherByCity(this.city);
+
     // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
     //set loading message
     //this.parentElement.innerHTML = 'Loading...';

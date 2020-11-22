@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
-const WeatherController = require('./weather-main/WeatherController');
+const WeatherModel = require('./Weather');
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
+const defaultCity = 'New York';
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
@@ -11,10 +12,11 @@ express()
 	.set('view engine', 'ejs')
 	.get('/', (req, res) => {
 		console.log('Received a request for the root directory')
-		const weatherController = new WeatherController('Detroit');
-		console.log(process.env.API_KEY);
-		weatherController.init().then((temperature) => {
-			res.render('pages/index', { temp: temperature })
-		});			
+		const weather = new WeatherModel();
+		const data = weather.getWeatherByCity(defaultCity);
+		console.log(data);
+		res.render('pages/index', {
+			temp: data.main.temp
+		})			
 	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));
