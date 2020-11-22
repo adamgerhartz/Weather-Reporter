@@ -13,11 +13,8 @@ express()
 		console.log('Received a request for the root directory')
 		const weatherController = new WeatherController('Detroit');
 		console.log(process.env.API_KEY);
-		let temperature = '';
-		weatherController.init().then({
-			temperature = weatherController.getCurrentTemp('Detroit');
-		})
-		console.log(`LINE 18 - Client: ${temperature}`);
-		res.render('pages/index', { temp: temperature })
+		weatherController.init().then((temperature) => {
+			res.render('pages/index', { temp: temperature })
+		});			
 	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));

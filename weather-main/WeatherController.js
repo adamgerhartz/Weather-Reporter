@@ -11,21 +11,26 @@ module.exports = class WeatherController {
   }
 
   async init() {
-    this.getWeatherByCity(this.city);
-    console.log(`LINE 15: ${this.temperature}`);
+    const temperature = this.getWeatherByCity(this.city);
+    let result = await temperature;
+    return result;
   }
 
   async getWeatherByCity() {
+    return new Promise((resolve, reject) => {
+      const weather = this.weather.getWeatherByCity(this.city);
+      resolve(weather.main.temp);
+    });
     // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
     //set loading message
     //this.parentElement.innerHTML = 'Loading...';
     // get the list of quakes in the specified radius of the location
-    const weather = await this.weather.getWeatherByCity(this.city);
-    console.log(`Weather Response: ${weather.main.temp}`);
-    this.temperature = weather.main.temp;
-    console.log(`LINE 27: ${this.temperature}`);
-    // render the list to html
-    //this.weatherView.renderWeather(weather, this.parentElement);
+    // const weather = this.weather.getWeatherByCity(this.city);
+    // console.log(`Weather Response: ${weather.main.temp}`);
+    // this.temperature = weather.main.temp;
+    // console.log(`LINE 27: ${this.temperature}`);
+    // // render the list to html
+    // this.weatherView.renderWeather(weather, this.parentElement);
     // add a listener to the new list of quakes to allow drill down in to the details
     // this.parentElement.addEventListener('touchend', e => {
     //   this.getWeatherDetails(e.target.dataset.id);
