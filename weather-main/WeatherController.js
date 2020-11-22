@@ -59,3 +59,6 @@ export default class WeatherController {
    
   }
 }
+
+
+module.exports = { WeatherController }
