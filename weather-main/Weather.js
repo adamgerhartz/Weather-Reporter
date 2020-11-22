@@ -8,11 +8,7 @@ module.exports = class Weather {
   }
   async getWeatherByCity(city = 'Detroit') {
     // use the getJSON function and the position provided to build out the correct URL to get the data we need.  Store it into this._quakes, then return it
-    try {
-      const apiKey = process.env.API_KEY_WEATHER;
-    } catch (error) {
-      console.log(`Error: Cannot read api key from file.`);
-    }
+    const apiKey = process.env.API_KEY_WEATHER;
     
     this._weather = utils.getJSON(`${this.baseUrl}&p=${city}&apiKey=${apiKey}`);
     console.log(this._weather);
