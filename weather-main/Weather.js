@@ -10,7 +10,7 @@ module.exports = class Weather {
     // use the getJSON function and the position provided to build out the correct URL to get the data we need.  Store it into this._quakes, then return it
     const apiKey = process.env.API_KEY_WEATHER;
     
-    this._weather = utils.getJSON(`${this.baseUrl}?q=${city}&apiKey=${apiKey}`);
+    this._weather = utils.getJSON(`${this.baseUrl}?q=${city}&apiKey=${apiKey}&units=imperial`);
     return this._weather;
   }
 
