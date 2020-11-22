@@ -11,7 +11,7 @@ module.exports = class WeatherController {
   }
 
   async init() {
-    this.temperature = this.getWeatherByCity(city);
+    this.temperature = this.getWeatherByCity(this.city);
   }
 
   
