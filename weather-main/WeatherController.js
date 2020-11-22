@@ -20,7 +20,7 @@ module.exports = class WeatherController {
   }
   async init() {
     // use this as a place to grab the element identified by this.parent, do the initial call of this.initPos(), and display some quakes by calling this.getQuakesByRadius()
-    this.parentElement = document.querySelector(this.parent);
+    //this.parentElement = document.querySelector(this.parent);
     await this.initPos();
     this.getWeatherByLocation();
   }
@@ -49,11 +49,11 @@ module.exports = class WeatherController {
     // get the list of quakes in the specified radius of the location
     const weather = await this.weather.getWeatherByLocation(this.position);
     // render the list to html
-    this.weatherView.renderWeather(weather, this.parentElement);
+    //this.weatherView.renderWeather(weather, this.parentElement);
     // add a listener to the new list of quakes to allow drill down in to the details
-    this.parentElement.addEventListener('touchend', e => {
-      this.getWeatherDetails(e.target.dataset.id);
-    });
+    // this.parentElement.addEventListener('touchend', e => {
+    //   this.getWeatherDetails(e.target.dataset.id);
+    // });
   }
   async getQuakeDetails(weatherId) {
     // get the details for the quakeId provided from the model, then send them to the view to be displayed
