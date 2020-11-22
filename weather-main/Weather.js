@@ -11,7 +11,6 @@ module.exports = class Weather {
     const apiKey = process.env.API_KEY_WEATHER;
     
     this._weather = utils.getJSON(`${this.baseUrl}?q=${city}&apiKey=${apiKey}`);
-    console.log(`Weather Response: ${this._weather}`);
     return this._weather;
   }
 
