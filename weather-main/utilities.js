@@ -4,7 +4,7 @@ const getLocation = function(options) {
         // return geolocation
         var req = unirest("GET", "https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/");
 
-        console.log(typeof process.env.API_KEY);
+        console.log(process.env.API_KEY);
 
         req.headers({
         "x-rapidapi-key": process.env.API_KEY,

@@ -4,6 +4,7 @@ const ejs = require('ejs');
 require('dotenv').config();
 const WeatherController = require('./weather-main/WeatherController');
 const PORT = process.env.PORT || 5000;
+console.log(process.env.API_KEY);
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
