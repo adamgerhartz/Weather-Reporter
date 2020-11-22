@@ -17,7 +17,8 @@ express()
 			.then(data => {
 				console.log(data);
 				res.render('pages/index', {
-					temp: data.main.temp
+					temp: data.main.temp,
+					name: data.name
 				})
 			});		
 	})
