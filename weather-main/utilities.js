@@ -17,3 +17,5 @@ export function getJSON(url) {
             console.log(error);
       });
 }
+
+module.exports = { getLocation, getJSON }

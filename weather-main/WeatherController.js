@@ -1,5 +1,6 @@
-import { getLocation } from './utilities.js';
-import Weather from './Weather.js';
+// import { getLocation } from './utilities.js';
+const util = require('./utilities');
+const weather = require('/weather');
 //import WeatherView from './WeatherView.js';
 
 // Quake controller

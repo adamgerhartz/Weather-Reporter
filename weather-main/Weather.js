@@ -1,4 +1,4 @@
-import { getJSON } from './utilities.js';
+const utils = require('./utilities');
 
 // Weather Model
 export default class Weather {
@@ -27,3 +27,5 @@ export default class Weather {
     return this._quakes.features.filter(item => item.id === id)[0];
   }
 }
+
+module.exports = { Weather }
