@@ -1,9 +1,8 @@
 const fetch = require("node-fetch");
 
 const getLocation = function(options) {
-    const unirest = require("unirest");
     return new Promise(function(resolve, reject) {
-        // return geolocation
+        // return geolocation eventually 
     });
 };
    
