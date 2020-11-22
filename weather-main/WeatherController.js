@@ -29,7 +29,7 @@ module.exports = class WeatherController {
     if (this.position.lat === 0) {
       try {
         // try to get the position using getLocation()
-        const location = getLocation()
+        const location = util.getLocation()
         console.log(`POSITION: ${location}`);
         
         // if we get the location back then set the latitude and longitude into this.position
