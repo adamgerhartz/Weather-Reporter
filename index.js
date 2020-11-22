@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const WeatherController = require('./weather-main/WeatherController');
 const PORT = process.env.PORT || 5000;
 console.log(process.env.API_KEY);
