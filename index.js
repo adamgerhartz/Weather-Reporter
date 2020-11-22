@@ -15,7 +15,7 @@ express()
 	.set('view engine', 'ejs')
 	.get('/', (req, res) => {
 		console.log('Received a request for the root directory')
-		const weatherController = new WeatherController('#weather');
+		const weatherController = new WeatherController('Detroit');
 		weatherController.init();
 		res.render('pages/index')
 	})
