@@ -16,6 +16,7 @@ express()
 		const weatherController = new WeatherController('Detroit');
 		console.log(process.env.API_KEY);
 		weatherController.init();
-		res.render('pages/index')
+		const temperature = weatherController.getWeather('Detroit');
+		res.render('pages/index', { temp: temperature })
 	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));
