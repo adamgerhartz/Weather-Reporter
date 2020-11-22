@@ -6,6 +6,7 @@ const getLocation = function(options) {
 };
    
 function getJSON(url) {
+  const fetch = require("node-fetch");
     return fetch(url)
   		.then(response => {
   			if (!response.ok) {
