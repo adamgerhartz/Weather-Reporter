@@ -1,4 +1,5 @@
 const getLocation = function(options) {
+    const geolocation = require('geolocation');
     return new Promise(function(resolve, reject) {
         // return geolocation
         geolocation.getCurrentPosition(resolve, reject, options);
