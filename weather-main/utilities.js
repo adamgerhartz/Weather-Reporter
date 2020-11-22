@@ -17,7 +17,7 @@ function getJSON(url) {
   		.catch(function(error) {
             console.log(error);
       });
-}
+} 
 
 module.exports = { getLocation, getJSON }
 
