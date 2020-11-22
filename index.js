@@ -5,8 +5,6 @@ const WeatherController = require('./weather-main/WeatherController');
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
 
-console.log(process.env);
-
 express()
 	.use(express.static(path.join(__dirname, 'public')))
 	.set('views', path.join(__dirname, 'views'))
@@ -17,6 +15,7 @@ express()
 		console.log(process.env.API_KEY);
 		weatherController.init();
 		const temperature = weatherController.getCurrentTemp('Detroit');
+		console.log(`LINE 18 - Client: ${temperature}`);
 		res.render('pages/index', { temp: temperature })
 	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));

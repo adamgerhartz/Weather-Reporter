@@ -12,6 +12,7 @@ module.exports = class WeatherController {
 
   async init() {
     this.getWeatherByCity(this.city);
+    console.log(`LINE 15: ${this.temperature}`);
   }
 
   
@@ -24,6 +25,7 @@ module.exports = class WeatherController {
     const weather = await this.weather.getWeatherByCity(this.city);
     console.log(`Weather Response: ${weather.main.temp}`);
     this.temperature = weather.main.temp;
+    console.log(`LINE 27: ${this.temperature}`);
     // render the list to html
     //this.weatherView.renderWeather(weather, this.parentElement);
     // add a listener to the new list of quakes to allow drill down in to the details
@@ -33,6 +35,7 @@ module.exports = class WeatherController {
   }
 
   async getCurrentTemp(city) {
+    console.log(`LINE 38: ${this.temperature}`);
     return this.temperature;
   }
 
