@@ -20,7 +20,7 @@ module.exports = class Weather {
   }
 
   loadApiKeyFromFile() {
-
+ 
   }
   getQuakeById(id) {
     // filter this._quakes for the record identified by id and return it
