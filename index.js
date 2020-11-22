@@ -13,7 +13,6 @@ express()
 	.get('/', (req, res) => {
 		console.log('Received a request for the root directory')
 		const weatherController = new WeatherController('#weather');
-		console.log("Did we make it?");
 		weatherController.init();
 		res.render('pages/index')
 	})
