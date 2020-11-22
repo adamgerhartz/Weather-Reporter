@@ -1,7 +1,7 @@
 const utils = require('./utilities');
 
 // Weather Model
-export default class Weather {
+class Weather {
   constructor() {
     this.baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
     this._weather = [];
