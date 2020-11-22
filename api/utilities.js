@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 const getLocation = function(options) {
     const unirest = require("unirest");
     return new Promise(function(resolve, reject) {
@@ -6,7 +8,6 @@ const getLocation = function(options) {
 };
    
 function getJSON(url) {
-  const fetch = require("node-fetch");
     return fetch(url)
   		.then(response => {
   			if (!response.ok) {

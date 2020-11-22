@@ -15,7 +15,6 @@ express()
 		console.log('Received a request for the root directory')
 		const data = weather.getWeatherByCity(defaultCity)
 			.then(data => {
-				console.log(data);
 				res.render('pages/index', {
 					temp: data.main.temp,
 					name: data.name
@@ -26,7 +25,6 @@ express()
 		const city = req.params['city'];
 		const data = weather.getWeatherByCity(city)
 			.then(data => {
-				console.log(data);
 				res.render('pages/index', {
 					temp: data.main.temp,
 					name: data.name
