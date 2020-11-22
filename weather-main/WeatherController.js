@@ -15,8 +15,6 @@ module.exports = class WeatherController {
     console.log(`LINE 15: ${this.temperature}`);
   }
 
-  
-
   async getWeatherByCity() {
     // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
     //set loading message
