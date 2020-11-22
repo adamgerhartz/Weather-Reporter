@@ -5,6 +5,7 @@ const WeatherModel = require('./api/Weather');
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
 const defaultCity = 'New York';
+const weather = new WeatherModel();
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
@@ -12,7 +13,6 @@ express()
 	.set('view engine', 'ejs')
 	.get('/', (req, res) => {
 		console.log('Received a request for the root directory')
-		const weather = new WeatherModel();
 		const data = weather.getWeatherByCity(defaultCity)
 			.then(data => {
 				console.log(data);
@@ -21,5 +21,17 @@ express()
 					name: data.name
 				})
 			});		
+	})
+	.get('/:city', (req, res) => {
+		const city = req.params['city'];
+		const data = weather.getWeatherByCity(city)
+			.then(data => {
+				console.log(data);
+				res.render('pages/index', {
+					temp: data.main.temp,
+					name: data.name
+				})
+			});
+
 	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));
