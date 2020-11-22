@@ -14,7 +14,7 @@ module.exports = class Weather {
       console.log(`Error: Cannot read api key from file.`);
     }
     
-    this._weather = getJSON(`${this.baseUrl}&lat=${city.name}&apiKey=${apiKey}`);
+    this._weather = getJSON(`${this.baseUrl}&p=${city}&apiKey=${apiKey}`);
     console.log(this._weather);
     return this._weather;
   }

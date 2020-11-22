@@ -18,7 +18,7 @@ module.exports = class WeatherController {
     //set loading message
     //this.parentElement.innerHTML = 'Loading...';
     // get the list of quakes in the specified radius of the location
-    const weather = await this.weather.getWeatherByLocation(this.city);
+    const weather = await this.weather.getWeatherByCity(this.city);
     // render the list to html
     //this.weatherView.renderWeather(weather, this.parentElement);
     // add a listener to the new list of quakes to allow drill down in to the details
