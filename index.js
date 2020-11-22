@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
-const WeatherModel = require('./api/Weather');
+const WeatherModel = require('./api/Weather.js');
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
 const defaultCity = 'New York';
