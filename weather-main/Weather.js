@@ -1,7 +1,7 @@
 const utils = require('./utilities');
 
 // Weather Model
-class Weather {
+module.exports = class Weather {
   constructor() {
     this.baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
     this._weather = [];
@@ -27,5 +27,3 @@ class Weather {
     return this._quakes.features.filter(item => item.id === id)[0];
   }
 }
-
-module.exports = { Weather }
