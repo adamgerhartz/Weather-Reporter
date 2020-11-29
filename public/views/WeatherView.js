@@ -45,11 +45,11 @@ export default class WeatherView {
 		const div = document.createElement("div");
 		div.innerHTML = (`
 			<label for='name'>City:</label><br/>
-			<p>${city.name}</p>
+			<p>${data.name}</p>
 			<label for='name'>Current Temperature:</label><br/>
-			<p>${city.temp}</p>
+			<p>${data.temp}</p>
 			<label for='name'>Feels Like:</label><br/>
-			<p>${city.feels_like}</p>
+			<p>${data.feels_like}</p>
 		`);
 		return div;
 	}
