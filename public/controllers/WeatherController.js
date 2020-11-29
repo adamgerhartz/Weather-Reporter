@@ -21,7 +21,7 @@ export default class WeatherController {
 	addWeatherListeners() {
 		// city
 		this.cityEl.addEventListener('keydown', () => {
-			this.loginView.hideErrorMessages();
+			this.weatherView.hideErrorMessages();
 		});
 		this.cityEl.addEventListener("keyup", (event) => {
 			if (event.target.value != '') {
@@ -46,7 +46,7 @@ export default class WeatherController {
 				return;
 			}
 
-			if (!isEmptcity && this.validationHelper.isValidEntry(city)) {
+			if (!isEmptyCity && this.validationHelper.isValidEntry(city)) {
 				this.weatherModel.getTemperature(city, (err, results) => {
 					if (err) {
 						this.weatherView.renderError("city-no");

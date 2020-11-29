@@ -5,7 +5,7 @@ const CITY_CHARACTER_LIMIT = 100;
 **/
 export default class ValidationHelper {
 	isValidEntry(city) {
-		if (city.length > USERNAME_CHARACTER_LIMIT) {
+		if (city.length > CITY_CHARACTER_LIMIT) {
 			return false;
 		}
 
