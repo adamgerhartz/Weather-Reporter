@@ -16,7 +16,6 @@ function getTemperatureByCity(req, res) {
 	});
 }
 
-
 module.exports = {
 	getDefaultWeather: getDefaultWeather,
 	getTemperatureByCity: getTemperatureByCity
