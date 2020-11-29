@@ -16,6 +16,10 @@ export default class WeatherView {
 		) 
 	}
 
+	renderResults(parent, data) {
+		this.parent.appendChild(this.renderResults(data));
+	}
+
 	hideErrorMessages() {
 		if (this.parent.childNodes.length > CHILD_LENGTH) {
 			// remove errors
@@ -35,5 +39,18 @@ export default class WeatherView {
 	renderError(type) {
 		const error = this.renderHelper.createError(type);
 		this.parent.appendChild(error);
+	}
+
+	renderResults(data) {
+		const div = document.createElement("div");
+		div.innerHTML = (`
+			<label for='name'>City:</label><br/>
+			<p>${city.name}</p>
+			<label for='name'>Current Temperature:</label><br/>
+			<p>${city.temp}</p>
+			<label for='name'>Feels Like:</label><br/>
+			<p>${city.feels_like}</p>
+		`);
+		return div;
 	}
 }

@@ -2,9 +2,12 @@ export default class WeatherModel {
 	getTemperature(city, sendTemperatureArray) {
 		$.get(`/${city}`, (data) => {
 			console.log(data);
-			// TODO
-			// const array == [];
-			// sendTemperatureArray(array);
+			const tempObject = {
+				"name": data.name,
+				"temp": data.main.temp,
+				"feels_like": data.main.fels_like
+			};
+			sendTemperatureArray(null, tempObject);
 		});
 	}
 }
