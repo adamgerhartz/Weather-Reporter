@@ -6,6 +6,7 @@ module.exports = class Weather {
     this.baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
     this._weather = '';
   }
+  
   async getWeatherByCity(city = 'Detroit') {
     const apiKey = process.env.API_KEY_WEATHER;
     city = city.replace(/-/g, ' ');
