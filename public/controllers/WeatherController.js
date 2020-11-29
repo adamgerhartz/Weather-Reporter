@@ -14,7 +14,6 @@ export default class WeatherController {
 	showWeatherForm() {
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
-			console.log(cityElement);
 			this.addWeatherListeners();
 		});
 	}
@@ -25,6 +24,7 @@ export default class WeatherController {
 			this.weatherView.hideErrorMessages();
 		});
 		this.cityEl.addEventListener("keyup", (event) => {
+			console.log(event.target.value);
 			if (event.target.value != '') {
 				const isValidEntry = this.validationHelper.isValidEntry(event.target.value);
 				if (!isValidEntry && !this.weatherView.isErrorDisplayed()) {
