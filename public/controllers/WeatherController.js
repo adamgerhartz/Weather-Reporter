@@ -14,7 +14,7 @@ export default class WeatherController {
 	showWeatherForm() {
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
-			console.log(cityEl);
+			console.log(cityElement);
 			this.addWeatherListeners();
 		});
 	}
