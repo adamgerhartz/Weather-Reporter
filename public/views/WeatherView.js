@@ -16,8 +16,12 @@ export default class WeatherView {
 		) 
 	}
 
-	renderResults(parent, data) {
-		this.parent.appendChild(this.makeChild(data));
+	renderResults(element, data) {
+		element.innerHTML = (`
+			<p id="city">City: ${data.name}</p>
+			<p id="temp">Current Temperature: ${data.temp}°</p>
+			<p id="feels_like">Feels Like: ${data.feels_like}°</p>
+		`);
 	}
 
 	hideErrorMessages() {
@@ -39,15 +43,5 @@ export default class WeatherView {
 	renderError(type) {
 		const error = this.renderHelper.createError(type);
 		this.parent.appendChild(error);
-	}
-
-	makeChild(data) {
-		const div = document.createElement("div");
-		div.innerHTML = (`
-			<p id="city">City: ${data.name}</p>
-			<p id="temp">Current Temperature: ${data.temp}°</p>
-			<p id="feels_like">Feels Like: ${data.feels_like}°</p>
-		`);
-		return div;
 	}
 }
