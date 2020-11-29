@@ -17,7 +17,7 @@ export default class WeatherView {
 	}
 
 	renderResults(parent, data) {
-		this.parent.appendChild(this.renderResults(data));
+		this.parent.appendChild(this.makeChild(data));
 	}
 
 	hideErrorMessages() {
@@ -41,7 +41,7 @@ export default class WeatherView {
 		this.parent.appendChild(error);
 	}
 
-	renderResults(data) {
+	makeChild(data) {
 		const div = document.createElement("div");
 		div.innerHTML = (`
 			<label for='name'>City:</label><br/>
