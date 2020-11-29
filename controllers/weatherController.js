@@ -17,7 +17,7 @@ function getTemperatureByCity(req, res) {
 	console.log(city);
 	weather.getWeatherByCity(city)
 		.then(data => {
-			console.log(data);
+			res.json(data);
 		});
 }
 
