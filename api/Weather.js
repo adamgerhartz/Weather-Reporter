@@ -10,7 +10,7 @@ module.exports = class Weather {
     const apiKey = process.env.API_KEY_WEATHER;
     city = city.replace(/-/g, ' ');
     this._weather = utils.getJSON(`${this.baseUrl}?q=${city}&apiKey=${apiKey}&units=imperial`);
-    console.log(`WEATHER DATA: ${this._weather}`);
+    console.log(`WEATHER DATA: ${this._weather.weather.description}`);
     callback(null, this._weather);
   }
 }
