@@ -1,4 +1,5 @@
 const WeatherModel = require('../api/Weather');
+const htmlspecialchars = require('htmlspecialchars');
 const weather = new WeatherModel();
 const defaultCity = "New York";
 
@@ -11,7 +12,7 @@ function getDefaultWeather(req, res) {
 }
 
 function getTemperatureByCity(req, res) {
-	const city = req.params['city'];
+	const city = htmlspecialchars(req.params['city']);
 	console.log(city);
 	weather.getWeatherByCity(city)
 		.then(data => {
