@@ -15,9 +15,8 @@ function getTemperatureByCity(req, res) {
 		city = "Detroit";
 	}
 	console.log(city);
-	weather.getWeatherByCity(city, (err, results) => {
-		res.json(results);
-	});
+	const data = weather.getWeatherByCity(city);
+	console.log(data);
 }
 
 module.exports = {
