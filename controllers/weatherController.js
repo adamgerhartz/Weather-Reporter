@@ -4,16 +4,14 @@ const defaultCity = "New York";
 
 function getDefaultWeather(req, res) {
 	console.log('Received a request for the root directory')
-	weather.getWeatherByCity(defaultCity, (err, results) => {
-		res.json(results);
-	});
+	weather.getWeatherByCity(defaultCity)
+		.then(data => {
+			res.json(data);
+		});
 }
 
 function getTemperatureByCity(req, res) {
-	let city = req.query['city'];
-	if (city === undefined) {
-		city = "Detroit";
-	}
+	const city = req.params['city'];
 	console.log(city);
 	weather.getWeatherByCity(city)
 		.then(data => {

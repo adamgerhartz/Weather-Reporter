@@ -8,6 +8,6 @@ express()
 	.use(express.static(path.join(__dirname, 'public')))
 	.use(express.json())
 	.use(express.urlencoded({ extended: true }))
-	.get('/', weatherController.getTemperatureByCity)
-	//.get('/:city', weatherController.getTemperatureByCity)
+	.get('/', weatherController.getDefaultWeather)
+	.get('/:city', weatherController.getTemperatureByCity)
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));
