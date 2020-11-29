@@ -12,8 +12,7 @@ export default class WeatherView {
 		this.parent.appendChild(this.renderHelper.renderInputField("City"));
 		this.parent.appendChild(this.renderHelper.renderSubmitButton("Get Current Temperature"));
 		callback(
-			[...[...this.parent.children][0].children][2], // city element
-			[...[...this.parent.children][1].children][2]  // submit button
+			[...[...this.parent.children][0].children][2] // city element
 		) 
 	}
 
