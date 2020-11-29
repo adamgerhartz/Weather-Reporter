@@ -45,8 +45,8 @@ export default class WeatherView {
 		const div = document.createElement("div");
 		div.innerHTML = (`
 			<p id="city">City: ${data.name}</p>
-			<p id="temp">Current Temperature: ${data.temp}</p>
-			<p id="feels_like">Feels Like: ${data.feels_like}</p>
+			<p id="temp">Current Temperature: ${data.temp}°</p>
+			<p id="feels_like">Feels Like: ${data.feels_like}°</p>
 		`);
 		return div;
 	}
