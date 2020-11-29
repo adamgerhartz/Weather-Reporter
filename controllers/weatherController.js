@@ -12,8 +12,9 @@ function getDefaultWeather(req, res) {
 function getTemperatureByCity(req, res) {
 	let city = req.query['city'];
 	if (city === undefined) {
-		city = "Detroit"
+		city = "Detroit";
 	}
+	console.log(city);
 	weather.getWeatherByCity(city, (err, results) => {
 		res.json(results);
 	});
