@@ -24,7 +24,6 @@ export default class WeatherController {
 			this.weatherView.hideErrorMessages();
 		});
 		this.cityEl.addEventListener("keyup", (event) => {
-			console.log(event.target.value);
 			if (event.target.value != '') {
 				const isValidEntry = this.validationHelper.isValidEntry(event.target.value);
 				if (!isValidEntry && !this.weatherView.isErrorDisplayed()) {

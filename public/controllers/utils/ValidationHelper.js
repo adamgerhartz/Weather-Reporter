@@ -9,7 +9,7 @@ export default class ValidationHelper {
 			return false;
 		}
 
-		if (!this.isAlpha(city) && this.isEmpty(city)) {
+		if (!this.isAlpha(city) || this.isEmpty(city)) {
 			return false;
 		}
 
