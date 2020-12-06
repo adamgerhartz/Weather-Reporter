@@ -39,7 +39,7 @@ export default class WeatherView {
 				name: nestedItem[0].date.toString().slice(0, 3),
 				showInLegend: true,
 				markerSize: 0,
-				datapoints: datapoints
+				dataPoints: datapoints
 			});
 		});
 		console.log(array);
