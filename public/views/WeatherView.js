@@ -34,50 +34,52 @@ export default class WeatherView {
 		data.forEach(nestedItem => {
 			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
-			console.log(datapoints);
-			let chart = new CanvasJS.Chart(`canvas`, {
-				animationEnabled: true,
-				theme: "light2",
-				title: {
-					text: "5-Day Forecast"
-				},
-				axisX: {
-					valueFormatString: "hh:mm TT"
-				},
-				axisY: {
-					title: "Degrees Fahrenheit",
-					suffix: "°"
-				},
-				toolTip: {
-					shared: true
-				},
-				legend: {
-					cursor: "pointer",
-					verticalAlign: "top",
-					horizontalAlign: "center",
-					dockInsidePlotArea: true,
-					itemclick: toogleDataSeries
-				},
-				data: array.push({
-					axisYType: "secondary",
-					name: nestedItem[0].date.toString().slice(0, 3),
-					showInLegend: true,
-					markerSize: 0,
-					yValueFormatString: "##.##°",
-					datapoints: datapoints
-				})
+			array.push({
+				axisYType: "secondary",
+				name: nestedItem[0].date.toString().slice(0, 3),
+				showInLegend: true,
+				markerSize: 0,
+				yValueFormatString: "##.##°",
+				datapoints: datapoints
 			});
-			chart.render();
-
-			function toogleDataSeries(e){
-				if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-					e.dataSeries.visible = false;
-				} else{
-					e.dataSeries.visible = true;
-				}
-				chart.render();
-			}
 		});
+
+		let chart = new CanvasJS.Chart(`canvas`, {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "5-Day Forecast"
+			},
+			axisX: {
+				valueFormatString: "hh:mm TT"
+			},
+			axisY: {
+				title: "Degrees Fahrenheit",
+				suffix: "°"
+			},
+			toolTip: {
+				shared: true
+			},
+			legend: {
+				cursor: "pointer",
+				verticalAlign: "top",
+				horizontalAlign: "center",
+				dockInsidePlotArea: true,
+				itemclick: toogleDataSeries
+			},
+			data: array
+		});
+
+		chart.render();
+
+		function toogleDataSeries(e){
+			if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				e.dataSeries.visible = false;
+			} else{
+				e.dataSeries.visible = true;
+			}
+			chart.render();
+		}
 		
 		
 	}
