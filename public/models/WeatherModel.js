@@ -10,4 +10,15 @@ export default class WeatherModel {
 			sendTemperatureArray(null, tempObject);
 		});
 	}
+
+	getForecast(city, sendForecastArray) {
+		$.get(`/${city}/forecast`, (data) => {
+			console.log(data);
+			const tempObject = {
+				"success": true
+			}
+			sendForecastArray(null, tempObject);
+		});
+		
+	}
 }

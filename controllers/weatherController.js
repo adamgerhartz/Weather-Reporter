@@ -20,7 +20,17 @@ function getTemperatureByCity(req, res) {
 		});
 }
 
+function getForecastByCity(req, res) {
+	const city = htmlspecialchars(req.params['city']);
+	console.log(city);
+	weather.getWeatherByCity(city)
+		.then(data => {
+			res.json(data);
+		});
+}
+
 module.exports = {
 	getDefaultWeather: getDefaultWeather,
-	getTemperatureByCity: getTemperatureByCity
+	getTemperatureByCity: getTemperatureByCity,
+	getForecastByCity: getForecastByCity
 }

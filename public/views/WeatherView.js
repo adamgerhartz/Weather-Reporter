@@ -10,18 +10,22 @@ export default class WeatherView {
 	renderForm(callback) {
 		this.parent.innerHTML = '';
 		this.parent.appendChild(this.renderHelper.renderInputField("City"));
-		this.parent.appendChild(this.renderHelper.renderSubmitButton("Get Current Temperature"));
+		this.parent.appendChild(this.renderHelper.renderSubmitButton("Get Current Temperature & 5-Day Forecast"));
 		callback(
 			[...[...this.parent.children][0].children][2] // city element
 		) 
 	}
 
-	renderResults(element, data) {
+	renderTemperature(element, data) {
 		element.innerHTML = (`
 			<p id="city">City: ${data.name}</p>
 			<p id="temp">Current Temperature: ${data.temp}°</p>
 			<p id="feels_like">Feels Like: ${data.feels_like}°</p>
 		`);
+	}
+
+	renderForecast(element, data) {
+		element.innerHTML += "<p>TODO: INSERT DATA</p>";
 	}
 
 	hideErrorMessages() {

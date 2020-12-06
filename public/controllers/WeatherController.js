@@ -52,7 +52,14 @@ export default class WeatherController {
 						this.weatherView.renderError("city-no");
 					}
 					const element = document.getElementById("results");
-					this.weatherView.renderResults(element, results);
+					this.weatherView.renderTemperature(element, results);
+				});
+				this.weatherModel.getForecast(city, (err, results) => {
+					if (err) {
+						this.weatherView.renderError("city-no");
+					}
+					const element = document.getElementById("results");
+					this.weatherView.renderForecast(element, results);
 				});
 			}
 		});
