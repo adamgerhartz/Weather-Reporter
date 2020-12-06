@@ -60,6 +60,7 @@ export default class WeatherView {
 				y: item.temp
 			});
 		})
+		return array;
 	}
 
 	hideErrorMessages() {
