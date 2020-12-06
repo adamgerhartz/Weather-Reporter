@@ -25,10 +25,13 @@ export default class WeatherView {
 	}
 
 	renderForecast(element, data) {
+		let count = 0;
 		data.forEach(nestedItem => {
+			const div = document.createElement("div");
+			div.setAttribute("id": `canvas${count}`)
 			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
-			let chart = new CanvasJS.Chart(element, {
+			let chart = new CanvasJS.Chart(`canvas${count++}`, {
 				animationEnabled: true,
 				theme: "light2",
 				title: {
