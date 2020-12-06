@@ -32,7 +32,7 @@ export default class WeatherView {
 				animationEnabled: true,
 				theme: "light2",
 				title: {
-					text: nestedItem.date.slice(0, 3)
+					text: nestedItem[0].date.slice(0, 3)
 				},
 				data: [{
 					type: "line",
