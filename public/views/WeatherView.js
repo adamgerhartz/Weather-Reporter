@@ -50,9 +50,9 @@ export default class WeatherView {
 			title: {
 				text: "5-Day Forecast"
 			},
-			axisX: {
-				valueFormatString: "hh:mm TT"
-			},
+			// axisX: {
+			// 	valueFormatString: "hh:mm TT"
+			// },
 			axisY: {
 				title: "Degrees Fahrenheit",
 				suffix: "°"
