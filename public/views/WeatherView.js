@@ -29,8 +29,8 @@ export default class WeatherView {
 		data.forEach(nestedItem => {
 			const div = document.createElement("div");
 			div.setAttribute("id", `canvas${count}`);
-			div.style.setAttribute("height", "370px");
-			dive.style.setAttribute("width", "100%");
+			div.setAttribute("height", "370px");
+			div.setAttribute("width", "100%");
 			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
 			let chart = new CanvasJS.Chart(`canvas${count++}`, {
