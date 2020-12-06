@@ -40,6 +40,7 @@ export default class WeatherView {
 				showInLegend: true,
 				markerSize: 0,
 				yValueFormatString: "##.##°",
+				xValueFormatString: "hh:mm TT",
 				dataPoints: datapoints
 			});
 		});
@@ -50,9 +51,6 @@ export default class WeatherView {
 			theme: "light2",
 			title: {
 				text: "5-Day Forecast"
-			},
-			axisX: {
-				valueFormatString: "hh:mm TT"
 			},
 			axisY: {
 				title: "Degrees Fahrenheit",
@@ -89,7 +87,7 @@ export default class WeatherView {
 		const array = [];
 		items.forEach(item => {
 			array.push({
-				x: item.date.getHours(),
+				x: item.date,
 				y: item.temp
 			});
 		})
