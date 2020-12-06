@@ -25,7 +25,32 @@ export default class WeatherView {
 	}
 
 	renderForecast(element, data) {
-		element.innerHTML += `<p>${data}</p>`;
+		data.forEach(nestedItem => {
+			const datapoints = this.getDataPoints(nestedItem);
+			let chart = new CanvasJS.Chart(element), {
+				animationEnabled: true,
+				theme: "light2",
+				title: {
+					text: nestedItem[0].date.slice(0, 3)
+				},
+				data: [{
+					type: "line",
+					indexLabelFontSize: 16,
+					dataPoints: datapoints
+				}]
+			}
+		});
+		chart.render();
+		
+	}
+
+	getDataPoints(items) {
+		const array = [];
+		items.forEach(item => {
+			array.push({
+				y: item.temp
+			});
+		})
 	}
 
 	hideErrorMessages() {
