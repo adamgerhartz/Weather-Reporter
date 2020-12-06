@@ -32,9 +32,9 @@ export default class WeatherView {
 		element.appendChild(div);
 		let array = [];
 		data.forEach(nestedItem => {
-			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
 			array.push({
+				type: "line",
 				axisYType: "secondary",
 				name: nestedItem[0].date.toString().slice(0, 3),
 				showInLegend: true,
