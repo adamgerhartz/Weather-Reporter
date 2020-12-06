@@ -27,7 +27,7 @@ export default class WeatherView {
 	renderForecast(element, data) {
 		data.forEach(nestedItem => {
 			const datapoints = this.getDataPoints(nestedItem);
-			let chart = new CanvasJS.Chart(element), {
+			let chart = new CanvasJS.Chart(element, {
 				animationEnabled: true,
 				theme: "light2",
 				title: {
@@ -38,7 +38,7 @@ export default class WeatherView {
 					indexLabelFontSize: 16,
 					dataPoints: datapoints
 				}]
-			}
+			});
 		});
 		chart.render();
 		
