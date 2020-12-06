@@ -26,7 +26,7 @@ export default class WeatherView {
 
 	renderForecast(element, data) {
 		data.forEach(nestedItem => {
-			console.log(nestedItem);
+			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
 			let chart = new CanvasJS.Chart(element, {
 				animationEnabled: true,
