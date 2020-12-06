@@ -45,18 +45,18 @@ export default class WeatherView {
 		console.log(array);
 
 		let chart = new CanvasJS.Chart(`canvas`, {
-			animationEnabled: true,
-			theme: "light2",
+			// animationEnabled: true,
+			// theme: "light2",
 			title: {
 				text: "5-Day Forecast"
 			},
 			// axisX: {
 			// 	valueFormatString: "hh:mm TT"
 			// },
-			axisY: {
-				title: "Degrees Fahrenheit",
-				suffix: "°"
-			},
+			// axisY: {
+			// 	title: "Degrees Fahrenheit",
+			// 	suffix: "°"
+			// },
 			toolTip: {
 				shared: true
 			},
