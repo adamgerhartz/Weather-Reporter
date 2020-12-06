@@ -52,7 +52,7 @@ export default class WeatherView {
 				text: "5-Day Forecast"
 			},
 			axisX: {
-				valueFormatString: "HH:mm:ss"
+				valueFormatString: "hh:mm TT"
 			},
 			axisY: {
 				title: "Degrees Fahrenheit",
@@ -89,7 +89,7 @@ export default class WeatherView {
 		const array = [];
 		items.forEach(item => {
 			array.push({
-				x: item.date,
+				// x: item.date,
 				y: item.temp
 			});
 		})
