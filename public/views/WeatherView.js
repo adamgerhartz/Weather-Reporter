@@ -40,8 +40,9 @@ export default class WeatherView {
 					dataPoints: datapoints
 				}]
 			});
+			chart.render();
 		});
-		chart.render();
+		
 		
 	}
 
