@@ -43,6 +43,7 @@ export default class WeatherView {
 				datapoints: datapoints
 			});
 		});
+		console.log(array);
 
 		let chart = new CanvasJS.Chart(`canvas`, {
 			animationEnabled: true,
