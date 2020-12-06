@@ -89,7 +89,7 @@ export default class WeatherView {
 		const array = [];
 		items.forEach(item => {
 			array.push({
-				x: new Date(item.date.toString()),
+				x: item.date,
 				y: item.temp
 			});
 		})
