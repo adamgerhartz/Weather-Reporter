@@ -39,7 +39,6 @@ export default class WeatherView {
 				name: nestedItem[0].date.toString().slice(0, 3),
 				showInLegend: true,
 				markerSize: 0,
-				xValueType: "dateTime",
 				yValueFormatString: "##.##°",
 				xValueFormatString: "hh:mm TT",
 				dataPoints: datapoints
