@@ -39,6 +39,7 @@ export default class WeatherView {
 				name: nestedItem[0].date.toString().slice(0, 3),
 				showInLegend: true,
 				markerSize: 0,
+				yValueFormatString: "##.##°",
 				dataPoints: datapoints
 			});
 		});
@@ -86,10 +87,9 @@ export default class WeatherView {
 
 	getDataPoints(items) {
 		const array = [];
-		const yes = items[0].date;
 		items.forEach(item => {
 			array.push({
-				x: yes,
+				x: item.date
 				y: item.temp
 			});
 		})
