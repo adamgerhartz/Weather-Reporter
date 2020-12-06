@@ -21,8 +21,12 @@ export default class WeatherModel {
 					temp: item.main.temp
 				});
 			});
-			console.log(forecastArray);
-			sendForecastArray(null, forecastArray);
+			// splice forecast array into 5 days
+			let splicedArray = [];
+			while (forecastArray.length) {
+				splicedArray.push(forecastArray.splice(0, 8));
+			}
+			sendForecastArray(null, splicedArray);
 		});		
 	}
 
