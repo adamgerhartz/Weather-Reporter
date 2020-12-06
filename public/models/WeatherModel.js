@@ -17,13 +17,18 @@ export default class WeatherModel {
 			let forecastArray = [];
 			data.list.forEach(item => {
 				forecastArray.push({
-					date: item.dt,
+					date: this.convertUnixToLocalDate(item.dt),
 					temp: item.main.temp
 				});
 			});
 			console.log(forecastArray);
 			sendForecastArray(null, forecastArray);
-		});
-		
+		});		
+	}
+
+	convertUnixToLocalDate(epoch) {
+		let d = new Date(0);
+		d.setUTCSeconds(epoch);
+		return d;
 	}
 }
