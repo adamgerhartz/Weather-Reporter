@@ -21,6 +21,7 @@ export default class WeatherModel {
 					temp: item.main.temp
 				});
 			});
+			console.log(forecastArray);
 			sendForecastArray(null, forecastArray);
 		});
 		
