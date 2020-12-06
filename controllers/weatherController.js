@@ -23,7 +23,7 @@ function getTemperatureByCity(req, res) {
 function getForecastByCity(req, res) {
 	const city = htmlspecialchars(req.params['city']);
 	console.log(city);
-	weather.getWeatherByCity(city)
+	weather.getForecastByCity(city)
 		.then(data => {
 			res.json(data);
 		});
