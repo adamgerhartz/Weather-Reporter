@@ -93,6 +93,7 @@ export default class WeatherView {
 				y: item.temp
 			});
 		})
+		console.log(array);
 		return array;
 	}
 
