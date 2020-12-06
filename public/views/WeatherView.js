@@ -86,9 +86,10 @@ export default class WeatherView {
 
 	getDataPoints(items) {
 		const array = [];
+		const yes = items[0].date;
 		items.forEach(item => {
 			array.push({
-				x: item.date,
+				x: yes,
 				y: item.temp
 			});
 		})
