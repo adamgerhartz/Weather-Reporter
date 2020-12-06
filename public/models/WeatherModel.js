@@ -14,10 +14,14 @@ export default class WeatherModel {
 	getForecast(city, sendForecastArray) {
 		$.get(`/${city}/forecast`, (data) => {
 			console.log(data);
-			const tempObject = {
-				"success": true
-			}
-			sendForecastArray(null, tempObject);
+			let forecastArray = [];
+			data.list.forEach(item => {
+				forecastArray.push({
+					date: item.dt,
+					temp: item.main.temp
+				});
+			});
+			sendForecastArray(null, forecastArray);
 		});
 		
 	}

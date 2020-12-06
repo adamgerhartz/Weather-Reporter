@@ -25,7 +25,7 @@ export default class WeatherView {
 	}
 
 	renderForecast(element, data) {
-		element.innerHTML += "<p>TODO: INSERT DATA</p>";
+		element.innerHTML += `<p>${data}</p>`;
 	}
 
 	hideErrorMessages() {
