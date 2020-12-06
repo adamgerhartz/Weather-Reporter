@@ -25,27 +25,47 @@ export default class WeatherView {
 	}
 
 	renderForecast(element, data) {
-		let count = 0;
+		const div = document.createElement("div");
+		div.setAttribute("id", `canvas`);
+		div.setAttribute("height", "370px");
+		div.setAttribute("width", "100%");
+		element.appendChild(div);
+		let array = [];
 		data.forEach(nestedItem => {
-			const div = document.createElement("div");
-			div.setAttribute("id", `canvas${count}`);
-			div.setAttribute("height", "370px");
-			div.setAttribute("width", "100%");
-			element.appendChild(div);
 			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
 			console.log(datapoints);
-			let chart = new CanvasJS.Chart(`canvas${count++}`, {
+			let chart = new CanvasJS.Chart(`canvas`, {
 				animationEnabled: true,
 				theme: "light2",
 				title: {
-					text: nestedItem[0].date.toString().slice(0, 3)
+					text: "5-Day Forecast"
 				},
-				data: [{
-					type: "line",
-					indexLabelFontSize: 16,
-					dataPoints: datapoints
-				}]
+				axisX: {
+					valueFormatString: "hh:mm TT"
+				},
+				axisY: {
+					title: "Degrees Fahrenheit",
+					suffix: "°"
+				},
+				toolTip: {
+					shared: true
+				},
+				legend: {
+					cursor: "pointer",
+					verticalAlign: "top",
+					horizontalAlign: "center",
+					dockInsidePlotArea: true,
+					itemclick: toogleDataSeries
+				},
+				data: array.push({
+					axisYType: "secondary",
+					name: nestedItem[0].date.toString().slice(0, 3),
+					showInLegend: true,
+					markerSize: 0,
+					yValueFormatString: "##.##°",
+					datapoints: datapoints
+				})
 			});
 			chart.render();
 		});
