@@ -26,6 +26,7 @@ export default class WeatherModel {
 			while (forecastArray.length) {
 				splicedArray.push(forecastArray.splice(0, 8));
 			}
+			console.log(splicedArray);
 			sendForecastArray(null, splicedArray);
 		});		
 	}
