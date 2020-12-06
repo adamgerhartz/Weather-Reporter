@@ -34,6 +34,7 @@ export default class WeatherView {
 			element.appendChild(div);
 			console.log(typeof nestedItem[0].date + nestedItem[0].date);
 			const datapoints = this.getDataPoints(nestedItem);
+			console.log(datapoints);
 			let chart = new CanvasJS.Chart(`canvas${count++}`, {
 				animationEnabled: true,
 				theme: "light2",
