@@ -32,7 +32,7 @@ function convertUnixToLocalDate(epoch) {
 function getCurrentLocation(callback) {
 	const options = {
 		enableHighAccuracy: true,
-		timeout: 1000,
+		timeout: 5000,
 		maximumAge: 0
 	}
 
