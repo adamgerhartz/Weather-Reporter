@@ -11,11 +11,12 @@ export default class WeatherController {
 		this.cityEl = '';
 	}
 
-	showWeatherForm() {
-		this.weatherView.renderForm((cityElement) => {
-			this.cityEl = cityElement;
-			this.addWeatherListeners();
-		});
+	showWeatherForm(position = {}) {
+		console.log(position);
+		// this.weatherView.renderForm((cityElement) => {
+		// 	this.cityEl = cityElement;
+		// 	this.addWeatherListeners();
+		// });
 	}
 
 	addWeatherListeners() {
