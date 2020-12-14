@@ -17,8 +17,8 @@ export default class WeatherModel {
 			$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}`, (tempData) => {
 				const tempObject = getTemperatureObject(tempData);
 				$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}/forecast`, (forecastData) => {
-					console.log(forecastData);
 					const forecastObject = getForecastObject(forecastData);
+					console.log(forecastObject);
 					sendWeatherData(null, tempObject, forecastObject);
 				});	
 			});
