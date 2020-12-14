@@ -29,7 +29,7 @@ function convertUnixToLocalDate(epoch) {
 	return d;
 }
 
-function getCurrentLocation() {
+function getCurrentLocation(callback) {
 	const options = {
 		enableHighAccuracy: true,
 		timeout: 5000,
@@ -38,12 +38,12 @@ function getCurrentLocation() {
 
 	function success(position) {
 		console.log("Called");
-		return position;
+		callback(position);
 	}
 
 	function error(err) {
 		console.warn(`ERROR(${err.code}): ${err.message}`);
-		return { success: false };
+		callback({ success: false });
 	}
  
 	navigator.geolocation.getCurrentPosition(success, error, options);

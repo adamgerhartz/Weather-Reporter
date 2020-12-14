@@ -9,19 +9,19 @@ export default class WeatherModel {
 	}
 
 	getWeatherByCurrentLocation(sendWeatherData) {
-		const position = getCurrentLocation();
-		console.log(position);
-		if (position.success === false) {
-			sendWeatherData(true, null, null);
-		}
-
-		$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}`, (tempData) => {
-			const tempObject = getTemperatureObject(tempData);
-			$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}/forecast`, (forecastData) => {
-				const forecastObject = getForecastObject(forecastData);
-				sendWeatherData(null, tempObject, forecastObject);
+		getCurrentLocation((position) => {
+			console.log(position);
+			if (position.success === false) {
+				sendWeatherData(true, null, null);
+			}
+			$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}`, (tempData) => {
+				const tempObject = getTemperatureObject(tempData);
+				$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}/forecast`, (forecastData) => {
+					const forecastObject = getForecastObject(forecastData);
+					sendWeatherData(null, tempObject, forecastObject);
+				});	
 			});
-		})
+		});
 	}
 
 	getForecast(city, sendForecastArray) {
