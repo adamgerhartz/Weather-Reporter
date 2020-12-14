@@ -38,9 +38,19 @@ function getTemperatureByCoordinates(req, res) {
 		});
 }
 
+function getForecastByCoordinates(req, res) {
+	const lat = htmlspecialchars(req.params['lat']);
+	const lon = htmlspecialchars(req.params['lon']);
+	weather.getForecastByCoordinates(lat, lon)
+		.then(data => {
+			res.json(data);
+		})
+}
+
 module.exports = {
 	getDefaultWeather: getDefaultWeather,
 	getTemperatureByCity: getTemperatureByCity,
 	getForecastByCity: getForecastByCity,
-	getTemperatureByCoordinates: getTemperatureByCoordinates
+	getTemperatureByCoordinates: getTemperatureByCoordinates,
+	getForecastByCoordinates: getForecastByCoordinates
 }

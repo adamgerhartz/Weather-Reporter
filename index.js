@@ -11,5 +11,6 @@ express()
 	.get('/', weatherController.getDefaultWeather)
 	.get('/:city', weatherController.getTemperatureByCity)
 	.get('/coords/:lat/:lon', weatherController.getTemperatureByCoordinates)
+	.get('/coords/:lat/:lon/forecast', weatherController.getForecastByCoordinates)
 	.get('/:city/forecast', weatherController.getForecastByCity)
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));

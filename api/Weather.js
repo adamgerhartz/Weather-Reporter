@@ -27,4 +27,10 @@ module.exports = class Weather {
     this._weather = utils.getJSON(`${this.baseTempUrl}?lat=${lat}&lon=${lon}&apiKey=${apiKey}&units=imperial`);
     return this._weather;
   }
+
+  async getForecastByCoordinates(lat, lon) {
+    const apiKey = process.env.API_KEY_WEATHER;
+    this._weather = utils.getJSON(`${this.baseForecastUrl}?lat=${lat}&lon=${lon}&apiKey=${apiKey}&units=imperial`);
+    return this._weather;
+  }
 }
