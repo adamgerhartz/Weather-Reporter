@@ -1,4 +1,4 @@
-import { getTemperatureObject, getForecastObject } from "./utils.utilities.js";
+import { getTemperatureObject, getForecastObject } from "./utils/utilities.js";
 
 export default class WeatherModel {
 	getTemperature(city, sendTemperatureArray) {
