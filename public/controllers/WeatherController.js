@@ -12,7 +12,7 @@ export default class WeatherController {
 	}
 
 	showWeatherForm(position = {}) {
-		this.weatherModel.getTemperatureByCoordinates(positon.coords, (results) => {
+		this.weatherModel.getTemperatureByCoordinates(position.coords, (results) => {
 			console.log(results);
 		});
 		// this.weatherView.renderForm((cityElement) => {
