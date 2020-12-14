@@ -10,7 +10,6 @@ export default class WeatherModel {
 
 	getWeatherByCurrentLocation(sendWeatherData) {
 		getCurrentLocation((position) => {
-			console.log(position);
 			if (position.success === false) {
 				sendWeatherData(true, null, null);
 			}
@@ -18,7 +17,6 @@ export default class WeatherModel {
 				const tempObject = getTemperatureObject(tempData);
 				$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}/forecast`, (forecastData) => {
 					const forecastObject = getForecastObject(forecastData);
-					console.log(forecastObject);
 					sendWeatherData(null, tempObject, forecastObject);
 				});	
 			});

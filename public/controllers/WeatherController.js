@@ -73,7 +73,7 @@ export default class WeatherController {
 			if (!err) {
 				const element = document.getElementById("results");
 				this.weatherView.renderTemperature(element, temperature);
-				this.WeatherView.renderForecast(element, forecast);
+				this.weatherView.renderForecast(element, forecast);
 			}
 		});
 	}
