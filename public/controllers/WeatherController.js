@@ -12,11 +12,12 @@ export default class WeatherController {
 	}
 
 	showWeatherForm() {
+		this.displayCurrentWeather();
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
 			this.addWeatherListeners();
+			this.displayCurrentWeather();
 		});
-		this.displayCurrentWeather();
 	}
 
 	addWeatherListeners() {
@@ -67,6 +68,7 @@ export default class WeatherController {
 	}
 
 	displayCurrentWeather() {
+		//TODO this.weatherView.renderProgressSpinner();
 		this.weatherModel.getWeatherByCurrentLocation((err, temperature, forecast) => {
 			if (!err) {
 				const element = document.getElementById("results");
