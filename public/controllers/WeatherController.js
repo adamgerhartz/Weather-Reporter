@@ -15,14 +15,8 @@ export default class WeatherController {
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
 			this.addWeatherListeners();
-			this.weatherModel.getWeatherByCurrentLocation((err, temperature, forecast) => {
-				if (!err) {
-					const element = document.getElementById("results");
-					this.weatherView.renderTemperature(element, temperature);
-					this.WeatherView.renderForecast(element, forecast);
-				}
-			});
 		});
+		this.displayCurrentWeather();
 	}
 
 	addWeatherListeners() {
@@ -68,6 +62,16 @@ export default class WeatherController {
 					const element = document.getElementById("results");
 					this.weatherView.renderForecast(element, results);
 				});
+			}
+		});
+	}
+
+	displayCurrentWeather() {
+		this.weatherModel.getWeatherByCurrentLocation((err, temperature, forecast) => {
+			if (!err) {
+				const element = document.getElementById("results");
+				this.weatherView.renderTemperature(element, temperature);
+				this.WeatherView.renderForecast(element, forecast);
 			}
 		});
 	}
