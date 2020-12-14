@@ -1,4 +1,4 @@
-export default function getTemperatureObject(data) {
+function getTemperatureObject(data) {
 	const tempObject = {
 		"name": data.name,
 		"temp": data.main.temp,
@@ -7,7 +7,7 @@ export default function getTemperatureObject(data) {
 	return tempObject;
 }
 
-export default function getForecastObject(data) {
+function getForecastObject(data) {
 	let forecastArray = [];
 	data.list.forEach(item => {
 		forecastArray.push({
@@ -28,3 +28,5 @@ function convertUnixToLocalDate(epoch) {
 	d.setUTCSeconds(epoch);
 	return d;
 }
+
+export { getTemperatureObject, getForecastObject };
