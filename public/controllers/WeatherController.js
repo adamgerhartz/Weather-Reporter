@@ -12,11 +12,13 @@ export default class WeatherController {
 	}
 
 	showWeatherForm(position = {}) {
-		this.weatherModel.getTemperatureByCoordinates(positon.coords);
-		this.weatherView.renderForm((cityElement) => {
-			this.cityEl = cityElement;
-			this.addWeatherListeners();
+		this.weatherModel.getTemperatureByCoordinates(positon.coords, (results) => {
+			console.log(results);
 		});
+		// this.weatherView.renderForm((cityElement) => {
+		// 	this.cityEl = cityElement;
+		// 	this.addWeatherListeners();
+		// });
 	}
 
 	addWeatherListeners() {
