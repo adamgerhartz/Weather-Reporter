@@ -5,9 +5,6 @@ const defaultCity = "New York";
 
 function getDefaultWeather(req, res) {
 	console.log('Received a request for the root directory')
-	if (navigator.geolocation) {
-		console.log("YES");
-	}
 	weather.getWeatherByCity(defaultCity)
 		.then(data => {
 			res.json(data);
@@ -32,8 +29,18 @@ function getForecastByCity(req, res) {
 		});
 }
 
+function getTemperatureByCoordinates(req, res) {
+	const lat = htmlspecialchars(req.params['lat']);
+	const lon = htmlspecialchars(req.params['lon']);
+	weather.getWeatherByCoordinates(lat, lon)
+		.then(data => {
+			res.json(data);
+		});
+}
+
 module.exports = {
 	getDefaultWeather: getDefaultWeather,
 	getTemperatureByCity: getTemperatureByCity,
-	getForecastByCity: getForecastByCity
+	getForecastByCity: getForecastByCity,
+	getTemperatureByCoordinates: getTemperatureByCoordinates
 }

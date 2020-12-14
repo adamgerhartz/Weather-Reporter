@@ -10,5 +10,6 @@ express()
 	.use(express.urlencoded({ extended: true }))
 	.get('/', weatherController.getDefaultWeather)
 	.get('/:city', weatherController.getTemperatureByCity)
+	.get('/coords/:lat/:lon', weatherController.getTemperatureByCoordinates)
 	.get('/:city/forecast', weatherController.getForecastByCity)
 	.listen(PORT, () => console.log(`Listening on ${PORT}`));

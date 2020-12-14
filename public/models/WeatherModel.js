@@ -11,6 +11,12 @@ export default class WeatherModel {
 		});
 	}
 
+	getTemperatureByCoordinates(coords, sendTemp) {
+		$.get(`/coords/${coords.latitude}/${coords.longitude}`, (data) => {
+			console.log(data);
+		})
+	}
+
 	getForecast(city, sendForecastArray) {
 		$.get(`/${city}/forecast`, (data) => {
 			console.log(data);

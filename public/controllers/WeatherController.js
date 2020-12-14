@@ -12,7 +12,7 @@ export default class WeatherController {
 	}
 
 	showWeatherForm(position = {}) {
-		this.weatherModel.getTemperatureByCoordinates();
+		this.weatherModel.getTemperatureByCoordinates(positon.coords);
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
 			this.addWeatherListeners();
