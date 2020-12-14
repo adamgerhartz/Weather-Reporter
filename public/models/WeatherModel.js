@@ -1,4 +1,4 @@
-import { getTemperatureObject, getForecastObject } from "./utils/utilities.js";
+import { getTemperatureObject, getForecastObject, getCurrentLocation } from "./utils/utilities.js";
 
 export default class WeatherModel {
 	getTemperature(city, sendTemperatureArray) {
@@ -8,10 +8,15 @@ export default class WeatherModel {
 		});
 	}
 
-	getWeatherByCoordinates(coords, sendWeatherData) {
-		$.get(`/coords/${coords.latitude}/${coords.longitude}`, (tempData) => {
+	getWeatherByCurrentLocation(sendWeatherData) {
+		const position = getCurrentLocation();
+		if (position.success === false) {
+			sendWeatherData(true, null, null);
+		}
+
+		$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}`, (tempData) => {
 			const tempObject = getTemperatureObject(tempData);
-			$.get(`/coords/${coords.latitude}/${coords.longitude}/forecast`, (forecastData) => {
+			$.get(`/coords/${position.coords.latitude}/${position.coords.longitude}/forecast`, (forecastData) => {
 				const forecastObject = getForecastObject(forecastData);
 				sendWeatherData(null, tempObject, forecastObject);
 			});

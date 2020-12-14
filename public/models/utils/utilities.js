@@ -29,4 +29,23 @@ function convertUnixToLocalDate(epoch) {
 	return d;
 }
 
-export { getTemperatureObject, getForecastObject };
+function getCurrentLocation() {
+	const options = {
+		enableHighAccuracy: true,
+		timeout: 5000,
+		maximumAge: 0
+	}
+ 
+	navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+function success(position) {
+	return position;
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
+	return { success: false };
+}
+
+export { getTemperatureObject, getForecastObject, getCurrentLocation };

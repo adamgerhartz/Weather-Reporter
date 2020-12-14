@@ -11,14 +11,16 @@ export default class WeatherController {
 		this.cityEl = '';
 	}
 
-	showWeatherForm(position = {}) {
+	showWeatherForm() {
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
 			this.addWeatherListeners();
-			this.weatherModel.getWeatherByCoordinates(position.coords, (err, temperature, forecast) => {
-				const element = document.getElementById("results");
-				this.weatherView.renderTemperature(element, temperature);
-				this.WeatherView.renderForecast(element, forecast);
+			this.weatherModel.getWeatherByCurrentLocation((err, temperature, forecast) => {
+				if (!err) {
+					const element = document.getElementById("results");
+					this.weatherView.renderTemperature(element, temperature);
+					this.WeatherView.renderForecast(element, forecast);
+				}
 			});
 		});
 	}
