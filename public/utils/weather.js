@@ -1,10 +1,23 @@
 import WeatherController from "../controllers/WeatherController.js";
 
 const weatherController = new WeatherController('main');
+
+const options = {
+	enableHighAccuracy: true,
+	timeout: 5000,
+	maximumAge: 0
+}
+ 
+function success(position) {
+	console.log(position);
+	weatherController.showWeatherForm(position);
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
+	weatherController.showWeatherForm();
+} 
+
 window.addEventListener('load', ()=> {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(weatherController.showWeatherForm());
-	} else {
-		weatherController.showWeatherForm();	
-	}
+	navigator.geolocation.getCurrentPosition(success, error, options);
 });
