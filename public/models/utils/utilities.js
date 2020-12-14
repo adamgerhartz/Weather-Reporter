@@ -35,17 +35,17 @@ function getCurrentLocation() {
 		timeout: 5000,
 		maximumAge: 0
 	}
+
+	function success(position) {
+		return position;
+	}
+
+	function error(err) {
+		console.warn(`ERROR(${err.code}): ${err.message}`);
+		return { success: false };
+	}
  
 	navigator.geolocation.getCurrentPosition(success, error, options);
-}
-
-function success(position) {
-	return position;
-}
-
-function error(err) {
-	console.warn(`ERROR(${err.code}): ${err.message}`);
-	return { success: false };
 }
 
 export { getTemperatureObject, getForecastObject, getCurrentLocation };
