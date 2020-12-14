@@ -10,6 +10,7 @@ export default class WeatherModel {
 
 	getWeatherByCurrentLocation(sendWeatherData) {
 		const position = getCurrentLocation();
+		console.log(position);
 		if (position.success === false) {
 			sendWeatherData(true, null, null);
 		}
