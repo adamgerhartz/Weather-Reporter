@@ -37,6 +37,7 @@ function getCurrentLocation() {
 	}
 
 	function success(position) {
+		console.log("Called");
 		return position;
 	}
 
