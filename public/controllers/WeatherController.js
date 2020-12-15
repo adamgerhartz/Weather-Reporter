@@ -13,7 +13,7 @@ export default class WeatherController {
 
 	showWeatherForm() {
 		if (navigator.geolocation) {
-			this.weatherView.renderProgess(document.getElementById("results"));
+			this.weatherView.renderProgress(document.getElementById("results"));
 			this.displayCurrentWeather();
 		}
 		this.weatherView.renderForm((cityElement) => {
