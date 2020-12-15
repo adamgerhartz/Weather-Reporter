@@ -17,9 +17,9 @@
         border-radius: 50%;
         content: "";
         height: 40px;
-        left: 500%;
+        left: 50%;
         position: absolute;
-        top: 500%;
+        top: 50%;
         transform: translate3d(-50%, -50%, 0);
         width: 40px;
     }
@@ -46,10 +46,10 @@
         border-radius: 50%;
         content: "";
         height: 40px;
-        left: 500%;
+        left: 50%;
         opacity: inherit;
         position: absolute;
-        top: 500%;
+        top: 50%;
         transform: translate3d(-50%, -50%, 0);
         transform-origin: center;
         width: 40px;
