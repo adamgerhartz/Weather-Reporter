@@ -12,12 +12,12 @@ export default class WeatherController {
 	}
 
 	showWeatherForm() {
+		this.weatherView.renderProgress(document.getElementById("results"));
 		navigator.geolocation.watchPosition((position) => {
-			this.weatherView.renderProgress(document.getElementById("results"));
 			this.displayCurrentWeather();
 		}, (error) => {
 			if (error.code == error.PERMISSION_DENIED) {
-				console.log("PERMISSION_DENIED");
+				this.weatherView.stopProgress();
 			}
 		});
 		this.weatherView.renderForm((cityElement) => {

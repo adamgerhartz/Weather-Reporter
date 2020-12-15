@@ -17,7 +17,7 @@ export default class WeatherView {
 	}
 
 	renderProgress(element) {
-		element.innerHTML = "...Please wait. Retrieving weather data for your location."
+		element.innerHTML = "<div class='spinner'></div>";
 	}
 
 	renderTemperature(element, data) {
