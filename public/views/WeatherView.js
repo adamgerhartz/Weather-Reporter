@@ -99,7 +99,7 @@ export default class WeatherView {
 			console.log(item);
 			array.push({
 				y: item.temp,
-				x: item.date.getHours().toString()
+				x: item.date
 			});
 		})
 		console.log(array);

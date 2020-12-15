@@ -4,7 +4,7 @@ const utils = require('./utilities');
 module.exports = class Weather {
   constructor() {
     this.baseTempUrl = 'https://api.openweathermap.org/data/2.5/weather';
-    this.baseForecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
+    this.baseForecastUrl = 'https://api.openweathermap.org/data/2.5/forecast/daily/';
     this._weather = '';
   }
   
