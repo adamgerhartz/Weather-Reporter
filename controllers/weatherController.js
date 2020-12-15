@@ -25,6 +25,7 @@ function getForecastByCity(req, res) {
 	console.log(city);
 	weather.getForecastByCity(city)
 		.then(data => {
+			console.log(data);
 			res.json(data);
 		});
 }
@@ -43,6 +44,7 @@ function getForecastByCoordinates(req, res) {
 	const lon = htmlspecialchars(req.params['lon']);
 	weather.getForecastByCoordinates(lat, lon)
 		.then(data => {
+			console.log(data);
 			res.json(data);
 		})
 }
