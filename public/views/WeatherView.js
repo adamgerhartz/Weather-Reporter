@@ -95,12 +95,16 @@ export default class WeatherView {
 	}
 
 	getDataPoints(items) {
+		const options = {
+			hour: "numeric"
+		}
+
 		const array = [];
 		items.forEach(item => {
 			console.log(item);
 			array.push({
 				y: item.temp,
-				label: item.date.toLocaleTimeString('en-US')
+				label: item.date.toLocaleTimeString('en-US', options)
 			});
 		})
 		console.log(array);
