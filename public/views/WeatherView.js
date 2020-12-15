@@ -17,11 +17,13 @@ export default class WeatherView {
 	}
 
 	renderProgress(element) {
-		element.innerHTML = "<div class='spinner'></div>";
+		const div = document.createElement("div");
+		div.setAttribute("class", `spinner`);
+		element.appendChild(div);
 	}
 
 	stopProgress(element) {
-		element.innerHTHML = "";
+		element.removeChild();
 	}
 
 	renderTemperature(element, data) {
