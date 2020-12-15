@@ -46,10 +46,10 @@
         border-radius: 50%;
         content: "";
         height: 40px;
-        left: 50%;
+        left: 500%;
         opacity: inherit;
         position: absolute;
-        top: 50%;
+        top: 500%;
         transform: translate3d(-50%, -50%, 0);
         transform-origin: center;
         width: 40px;
