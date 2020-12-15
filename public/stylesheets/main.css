@@ -6,7 +6,7 @@
     margin-top: 20px;
 }
 
-.spinner {
+/*.spinner {
     // The height here is just for demo purposes
     height: 100vh;  
     position: relative;
@@ -23,7 +23,7 @@
         transform: translate3d(-50%, -50%, 0);
         width: 40px;
     }
-}
+}*/
 
 @keyframes spinner {
     0% {
