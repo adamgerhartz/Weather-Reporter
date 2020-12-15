@@ -13,17 +13,17 @@ export default class WeatherController {
 
 	showWeatherForm() {
 		this.weatherView.renderProgress(document.getElementById("results"));
-		// navigator.geolocation.watchPosition((position) => {
-		// 	this.displayCurrentWeather();
-		// }, (error) => {
-		// 	if (error.code == error.PERMISSION_DENIED) {
-		// 		this.weatherView.stopProgress();
-		// 	}
-		// });
-		// this.weatherView.renderForm((cityElement) => {
-		// 	this.cityEl = cityElement;
-		// 	this.addWeatherListeners(document.getElementById("results"));
-		// });
+		navigator.geolocation.watchPosition((position) => {
+			this.displayCurrentWeather();
+		}, (error) => {
+			if (error.code == error.PERMISSION_DENIED) {
+				this.weatherView.stopProgress();
+			}
+		});
+		this.weatherView.renderForm((cityElement) => {
+			this.cityEl = cityElement;
+			this.addWeatherListeners(document.getElementById("results"));
+		});
 	}
 
 	addWeatherListeners() {
