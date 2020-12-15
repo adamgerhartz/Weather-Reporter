@@ -58,7 +58,7 @@ export default class WeatherView {
 
 		let chart = new CanvasJS.Chart(`canvas`, {
 			animationEnabled: true,
-			context.imageSmoothingEnabled: false,
+			imageSmoothingEnabled: false,
 			theme: "light2",
 			title: {
 				text: "5-Day Forecast"
