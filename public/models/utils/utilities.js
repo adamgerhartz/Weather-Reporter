@@ -16,6 +16,7 @@ function getForecastObject(data) {
 		});
 		console.log(item);
 	});
+	forecastArray.sort();
 	// splice forecast array into 5 days
 	let splicedArray = [];
 	while (forecastArray.length) {
