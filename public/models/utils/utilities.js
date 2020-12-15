@@ -15,9 +15,20 @@ function getForecastObject(data) {
 			temp: item.main.temp
 		});
 	});
+
 	forecastArray.forEach(forecast => {
 		console.log(forecast);
-	})
+	});
+
+	forecastArray.sort((a, b) => {
+		return new Date(b.date) - new Date(a.date);
+	});
+
+	forecastArray.forEach(forecast => {
+		console.log(forecast);
+	});
+
+	console.log(forecastArray)
 	// splice forecast array into 5 days
 	let splicedArray = [];
 	while (forecastArray.length) {
