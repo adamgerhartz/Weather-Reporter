@@ -61,7 +61,7 @@ export default class WeatherView {
 			imageSmoothingEnabled: false,
 			theme: "light2",
 			title: {
-				text: "5-Day Forecast"
+				text: "5-Day/3-Hour Forecast"
 			},
 			axisY: {
 				title: "Degrees Fahrenheit",
