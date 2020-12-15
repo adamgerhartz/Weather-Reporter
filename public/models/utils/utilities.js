@@ -15,6 +15,8 @@ function getForecastObject(data) {
 			temp: item.main.temp
 		});
 	});
+
+	console.log(forecastArray);
 	// splice forecast array into 5 days
 	let splicedArray = [];
 	while (forecastArray.length) {
