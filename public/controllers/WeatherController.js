@@ -17,7 +17,7 @@ export default class WeatherController {
 			this.displayCurrentWeather();
 		}, (error) => {
 			if (error.code == error.PERMISSION_DENIED) {
-				this.weatherView.stopProgress();
+				this.weatherView.stopProgress(document.getElementById("results"));
 			}
 		});
 		this.weatherView.renderForm((cityElement) => {

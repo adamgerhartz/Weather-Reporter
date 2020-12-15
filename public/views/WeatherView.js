@@ -23,7 +23,7 @@ export default class WeatherView {
 	}
 
 	stopProgress(element) {
-		element.removeChild();
+		element.removeChild(element.children[0]);
 	}
 
 	renderTemperature(element, data) {
