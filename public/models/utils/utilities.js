@@ -20,7 +20,7 @@ function getForecastObject(data) {
 		console.log(forecast);
 	});
 
-	forecastArray.sort((a, b) => a.getTime() - b.getTime());
+	forecastArray.sort((a, b) => a.date.getTime() - b.date.getTime());
 
 	forecastArray.forEach(forecast => {
 		console.log(forecast);
