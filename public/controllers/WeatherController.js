@@ -12,7 +12,10 @@ export default class WeatherController {
 	}
 
 	showWeatherForm() {
-		this.displayCurrentWeather();
+		if (navigator.geolocation) {
+			this.weatherView.renderProgess(document.getElementById("results"));
+			this.displayCurrentWeather();
+		}
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
 			this.addWeatherListeners();

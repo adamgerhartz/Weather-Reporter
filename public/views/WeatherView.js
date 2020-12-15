@@ -16,6 +16,10 @@ export default class WeatherView {
 		) 
 	}
 
+	renderProgress(element) {
+		element.innerHTML = "...Please wait. Retrieving weather data for your location."
+	}
+
 	renderTemperature(element, data) {
 		element.innerHTML = (`
 			<p id="city">City: ${data.name}</p>
