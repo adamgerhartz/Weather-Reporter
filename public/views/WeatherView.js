@@ -99,7 +99,7 @@ export default class WeatherView {
 			console.log(item);
 			array.push({
 				y: item.temp,
-				label: item.date.getTime()
+				label: item.date.toLocaleTimeString('en-US')
 			});
 		})
 		console.log(array);
