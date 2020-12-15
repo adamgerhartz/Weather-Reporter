@@ -20,8 +20,8 @@ function getForecastObject(data) {
 		console.log(forecast);
 	});
 
-	forecastArray.sort((a, b) => {
-		return new Date(b.date) - new Date(a.date);
+	forecastArray.sort((o1, o2) => {
+		return sort_o1_before_o2 ? -1 : sort_o1_after_o2 ? 1 : 0;
 	});
 
 	forecastArray.forEach(forecast => {
