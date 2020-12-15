@@ -7,11 +7,11 @@
 }
 
 .loader {
-  border: 2.6667px solid #f3f3f3;
+  border: 4.80006px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 2.6667px solid #3498db;
-  width: 20px;
-  height: 20px;
+  border-top: 4.80006px solid #3498db;
+  width: 36px;
+  height: 36px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
