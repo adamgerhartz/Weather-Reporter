@@ -14,9 +14,10 @@ function getForecastObject(data) {
 			date: convertUnixToLocalDate(item.dt),
 			temp: item.main.temp
 		});
-		console.log(item);
 	});
-	forecastArray.sort();
+	forecastArray.forEach(forecast => {
+		console.log(forecast);
+	})
 	// splice forecast array into 5 days
 	let splicedArray = [];
 	while (forecastArray.length) {
