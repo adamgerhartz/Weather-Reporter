@@ -13,7 +13,6 @@ export default class WeatherController {
 
 	showWeatherForm() {
 		navigator.geolocation.watchPosition((position) => {
-			this.weatherView.renderProgress(document.getElementById("results"));
 			this.displayCurrentWeather();
 		}, (error) => {
 			if (error.code == error.PERMISSION_DENIED) {
@@ -21,8 +20,9 @@ export default class WeatherController {
 			}
 		});
 		this.weatherView.renderForm((cityElement) => {
+			this.weatherView.renderProgress(document.getElementById("results"));
 			this.cityEl = cityElement;
-			this.addWeatherListeners(document.getElementById("results"));
+			this.addWeatherListeners();
 		});
 	}
 
