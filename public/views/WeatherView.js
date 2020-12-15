@@ -18,7 +18,7 @@ export default class WeatherView {
 
 	renderProgress(element) {
 		const div = document.createElement("div");
-		div.setAttribute("class", `spinner`);
+		div.setAttribute("class", `loader`);
 		element.appendChild(div);
 	}
 

@@ -6,53 +6,23 @@
     margin-top: 20px;
 }
 
-.spinner {
-    // The height here is just for demo purposes
-    height: 100vh;  
-    position: relative;
-    
-    &::before {
-        border: solid 3px #eee;
-        border-bottom-color: #EF6565;
-        border-radius: 50%;
-        content: "";
-        height: 40px;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        width: 40px;
-    }
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
 }
 
-/*@keyframes spinner {
-    0% {
-        transform: translate3d(-50%, -50%, 0) rotate(0deg);
-    }
-    100% {
-         transform: translate3d(-50%, -50%, 0) rotate(360deg);
-    }
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
-.spinner {
-    // The height here is just for demo purposes
-    height: 100vh;
-    opacity: 1;
-    position: relative;
-    transition: opacity linear 0.1s;    
-    &::before {
-        animation: 2s linear infinite spinner;
-        border: solid 3px #eee;
-        border-bottom-color: #EF6565;
-        border-radius: 50%;
-        content: "";
-        height: 40px;
-        left: 50%;
-        opacity: inherit;
-        position: absolute;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        transform-origin: center;
-        width: 40px;
-        will-change: transform;
-    }
-}*/
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
