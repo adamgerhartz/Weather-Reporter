@@ -20,6 +20,10 @@ export default class WeatherView {
 		element.innerHTML = "<div class='spinner'></div>";
 	}
 
+	stopProgress(element) {
+		element.innerHTHML = "";
+	}
+
 	renderTemperature(element, data) {
 		element.innerHTML = (`
 			<p id="city">City: ${data.name}</p>

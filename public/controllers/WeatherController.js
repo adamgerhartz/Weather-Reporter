@@ -22,7 +22,7 @@ export default class WeatherController {
 		});
 		this.weatherView.renderForm((cityElement) => {
 			this.cityEl = cityElement;
-			this.addWeatherListeners();
+			this.addWeatherListeners(document.getElementById("results"));
 		});
 	}
 
